@@ -7,17 +7,14 @@ public class Gerente extends Funcionario {
     
     public void consultarVendas(Vendedor vendedor) {
         System.out.println("Consultando vendas como gerente...");
-        vendedor.getVendasFeitas();
-        System.out.println("Total de vendas do vendedor: " + vendedor.getVendasFeitas());
+        System.out.println("Total de vendas do vendedor " + vendedor.getNome() + ": " + vendedor.getVendasFeitas());
     }
     
-    public void gerarRelatorioFinanceiro(Vendedor vendedor, Atendente atendente) {
-        //vendedor.getVendasFeitas();
+    public void gerarRelatorioFinanceiro(Atendente atendente) {
         atendente.getValorEmCaixa();
         System.out.println("Relatório financeiro gerado.");
-        //System.out.println("Total de vendas do vendedor: " + vendedor.getVendasFeitas());
-        consultarVendas(vendedor);
-        System.out.println("Total em caixa do atendente: R$" + atendente.getValorEmCaixa());
+        System.out.println("Gerente responsável: " + getNome());
+        System.out.println("Total em caixa do atendente " + atendente.getNome() + ": R$" + atendente.getValorEmCaixa());
     }
 
     

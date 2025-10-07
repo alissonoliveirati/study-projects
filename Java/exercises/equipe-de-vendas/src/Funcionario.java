@@ -1,30 +1,37 @@
 public class Funcionario {
     
     private String nome;
-    private String emailString;
+    private String email;
     private String senha;
     private boolean isAdmin;
 
-    public Funcionario(String nome, String emailString, String senha) {
+    public Funcionario(String nome, String email, String senha) {
         this.nome = nome;
-        this.emailString = emailString;
+        this.email = email;
         this.senha = senha;
     }
 
     public void realizarLogin(String email, String senha) {
-        System.out.println("Login realizado com sucesso.");
+        if (this.email.equals(email) && this.senha.equals(senha)) {
+            System.out.printf("%s (%s) realizou login.%n", nome, getClass().getSimpleName());
+        } else {
+            System.out.println("Falha no login. Verifique suas credenciais.");
+        }
     }
 
     public void realizarLogoff() {
-        System.out.println("Logoff realizado com sucesso.");
+        System.out.printf("%s (%s) realizou logoff.%n", nome, getClass().getSimpleName());
     }
 
-    public void alterarDados() {
-        System.out.println("Dados alterados com sucesso.");
+    public void alterarDados(String novoNome, String novoEmail) {
+        this.nome = novoNome;
+        this.email = novoEmail;
+        System.out.println("Dados alterados com sucesso!");
     }
 
-    public void alterarSenha() {
-        System.out.println("Senha alterada com sucesso.");
+    public void alterarSenha(String novaSenha) {
+        this.senha = novaSenha;
+        System.out.println("Senha alterada com sucesso!");
     }
 
     public boolean isAdmin() {
@@ -39,8 +46,8 @@ public class Funcionario {
         return nome;
     }
 
-    public String getEmailString() {
-        return emailString;
+    public String getEmail() {
+        return email;
     }
 
     public String getSenha() {
@@ -51,8 +58,8 @@ public class Funcionario {
         this.nome = nome;
     }
 
-    public void setEmailString(String emailString) {
-        this.emailString = emailString;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public void setSenha(String senha) {

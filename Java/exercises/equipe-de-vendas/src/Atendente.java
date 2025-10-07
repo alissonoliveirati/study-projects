@@ -9,7 +9,7 @@ public class Atendente extends Funcionario {
 
     public void receberPagamento(double valor) {
         valorEmCaixa += valor;
-        System.out.println("Pagamento recebido: R$" + valor);
+        System.out.println("Pagamento recebido pelo atendente " + getNome() + ": R$" + valor);
     }
 
     public double getValorEmCaixa() {
